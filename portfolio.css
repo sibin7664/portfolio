@@ -19,7 +19,77 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 80px;
+    margin: 20px 0px;
+}
+ nav .icons{
+   font-size: 2rem;
+   color: #333;
+   position: absolute;
+   right: 5%;
+   top: 0px;
+   cursor: pointer;
+   display: none;
+}
+nav .close-btn{
+    margin-left: 20px;
+    right: 0;
+    font-size: 2rem;
+    color: #333;
+    position: absolute;
+    display: none;
+    cursor: pointer;
+
+}
+.logo{
+    text-decoration: none;
+    size: 2.5rem;
+    padding: 10px;
+    
+}
+@media (max-width:768px)
+{
+    nav .icons{
+        float: right;
+    }
+    nav .nav-items{
+        display: none;
+    }
+    nav .icons{
+        display: block;
+    }
+
+    nav .nav-items{
+        position: absolute;
+        width: 100%;
+        top: 10%;
+        z-index: 1;
+        text-align: center;
+        background-color: #333333ae;
+        display: none;
+    }
+    nav .link{
+        display: block;
+        color: #333;
+        font-size: 1rem;
+        margin: 1.2rem 0;
+        text-align: center;
+    }
+    nav .link:hover{
+        color: whitesmoke;
+    }
+}
+
+#check{
+    display: none;
+}
+#check:checked ~.nav-items{
+    display: block;
+}
+#check:checked ~ label .icons{
+    display:none;
+}
+#check:checked~ label .close-btn{
+    display: block;
 }
 .listiem{
    display: inline;
@@ -79,6 +149,18 @@ nav{
     transform: translate(-50%);
     transition: bottom 3s, left 1s; /* for smooth */
 }
+
+@media (max-width:768px){
+    .home-content{
+        margin-top: 400px;
+    }
+    .home-images{
+        height: 50%;
+        top: 0;
+        margin-top: 100px;
+    }
+}
+
 /* #shape{
     width: 500px;
     height: auto;
@@ -94,7 +176,7 @@ nav{
 
 }
 #about{
-    margin: 15% 8% 0% 7%; 
+    margin: 35% 8% 0% 7%; 
     /* margin: 50px; */
     /* margin-bottom: 70px; */
 }
@@ -114,14 +196,30 @@ nav{
 
 }
 .about-content{
-    display: flex;
-    margin-top: 10px;
-    align-items: center;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 2rem;
+   margin-top: 20px;
+   align-items: center;
+}
 
+@media (max-width:768px)
+{
+
+    #about{
+        margin: 5% 3%; 
+    }
+    .about-content{
+        display: grid;
+        grid-template-columns: 1fr;  
+        margin-top: 10px;
+        align-items: center;
+    } 
+    
 }
 
 #about-image>img{
-    width: 480px;
+    width: 580px;
     height: auto;
 }
 #about-details{
@@ -159,6 +257,14 @@ nav{
     gap: 2rem;
     margin-top: 20px;
     align-items: center;
+}
+@media (max-width:768px)
+{
+    .skill-content{
+        display: grid;
+        grid-template-columns: 1fr;
+
+    }
 }
 .bar{
     display: flex;
@@ -251,7 +357,6 @@ nav{
 }
 .uparrow{
     float: right;
-    margin: ;
 }
 ::-webkit-scrollbar{
     width: 10px;
